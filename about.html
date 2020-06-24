@@ -1,0 +1,325 @@
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+
+#section2 {
+ float:left;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 400px;
+  bottom: 0;
+  font-size:22px;
+}
+
+html, body {
+ 
+  font-family: fantasy;
+}
+
+.about__section {
+  width:960px;
+  margin:auto;
+}
+
+.about__section .about__slot {
+  width:33%;
+  box-sizing: border-box;
+  background-color:white;
+  /*border:1px solid #ccc;*/
+  border-right:none;
+  border-top:none;
+  height:15vw;
+  min-height:300px;
+  min-width:220px;
+  display:inline-block;
+  vertical-align:top;
+  text-align:center;
+  cursor:pointer;
+  position:relative;
+  background-size:0% auto;
+  -webkit-transition:all 0.3s linear;
+  background-position:center center;
+  background-repeat:repeat;
+  overflow:hidden;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    height: 50px;
+    margin-top: -50px;
+padding: 70px 25px;
+      background: white;
+      color: black;
+	  text-align: center;
+}
+
+
+
+.about__slot .about__info {
+  position:absolute;
+  left:0;
+  bottom:0;
+  top:210px;
+  right:0;
+  pointer-events:none;
+  z-index:9;
+  -webkit-transition:all 0.3s linear;
+  
+}
+.about__slot .Staffpic {
+  margin:auto;
+  margin-top:19px;
+  width:172px;
+  height:172px;
+  /*border:10px double #424242;*/
+  background-size:200px 200px;
+  background-position:center 15%;
+  border-radius:100%;
+  -webkit-transition:all 0.1s ease-in-out;
+}
+
+
+.about__slot .name {
+  font-family:sans-serif;
+  font-size:20px;
+  font-weight:800;
+  color:#424242;
+  margin-bottom:0px;
+  -webkit-transition:all 0.3s linear;
+}
+
+.about__slot .title {
+   font-family: sans-serif;
+  font-size: 18px;
+  font-weight:300;
+  margin-top:5px;
+  color: lightgray;
+  -webkit-transition:all 0.3s linear;
+}
+
+
+
+.about__section .about__slot:hover .Staffpic {
+  opacity:1;
+  width:100%;
+  height:300px;
+  border-radius:0;
+  margin-top:0;
+  background-size:325px 325px;
+  border:0;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
+.about__section .about__slot:hover .name {
+  color:#f5f5f5 !important;
+}
+
+.about__section .about__slot:hover .about__info {
+    background-color:rgba(0,0,0,0.42);
+}
+
+.navi {
+  overflow: hidden;
+  background-color: white;
+}
+
+.navi a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navi a:hover {
+  background-color: #ddd;
+  color: white;
+}
+
+.navi a.active {
+  background-color: white;
+  color: black;
+}
+
+#parent {
+    margin: 0;
+    width: 100%;
+	display: block;
+	clear: both;
+}
+.left {
+    float: left;
+    width: 50%;
+}
+.right {
+    overflow: hidden;
+    width: 50%;
+	float:right;
+}
+.cent{
+padding:100px;
+opacity:0;
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div id="parent">
+<div class="navi" id="ll">
+  <a  href="mainpage.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+  <a href="quiz.html">Quiz</a>
+  <a class="active" href="#about" style="float:right; font-size:22px"><b>About</b></a>
+</div>
+</div>
+
+<div id="parent">
+<div class="right">
+
+  <img src="team.jpg" style="width:750px; height:750px;">
+ </div>
+ </div> 
+<div class ="left"><div class="cent" id="aniText" style="opacity:1; font-size:23px;"><h1><b>Our company history</b></h1><p> This company has been built with on passion and dedication and has been standeing since 1998 like no other company. #positiveVibes</p></div>
+
+</div>
+
+<div id="parent">
+<div class="left">
+
+  <img src="team2.jpg" style="width:630px; height:600px;">
+ </div>
+ </div> 
+<div class ="right"><div class="cent" id="aniText" style="opacity:1; font-size:23px;"><h1><b>Our mission</b></h1><p>Our misson as a company is to leave each and every single one of our cleints satisfied and in awe. This mission places upon us, as a team we work hard to meet this mission and fullfill all of our clients wishes.</p></div>
+
+</div>
+
+
+<div id="parent">
+<h1 style="text-align: center; font-family: san-serif;"> Meet the Team </h1>
+<br></br>
+
+
+<div class="about__section">
+
+
+<div class="about__slot">
+    <div class="Staffpic" onclick="zapin(this.parentNode);" style="background-image:url('riri.jpg');"></div>
+  
+  <div class="about__info">
+  <h4 class="name">Rihanna</h4>
+  <h5 class="title">CEO</h5>
+  </div>
+  </div>
+  
+ 
+  <div class="about__slot">
+  <div class="Staffpic" onclick="zapin(this.parentNode);" style="background-image:url('yonce.png');"></div>
+  
+  <div class="about__info">
+  <h4 class="name">Beyonce Knowles Cater</h4>
+  <h5 class="title">CMO</h5>
+  </div>
+
+  
+  </div>
+  
+ <div class="about__slot">
+    <div class="Staffpic"  onclick="zapin(this.parentNode);" style="background-image:url('timmy.png');"></div>
+  
+  <div class="about__info">
+  <h4 class="name">Timmy chalemet</h4>
+  <h5 class="title">Creative Director</h5>
+  </div>
+  
+  </div> <div class="about__slot">
+    <div class="Staffpic" onclick="zapin(this.parentNode);" style="background-image:url('woman2.png');"></div>
+  
+  <div class="about__info">
+  <h4 class="name">halima</h4>
+  <h5 class="title">Intrior designer</h5>
+  </div>
+   
+  
+  
+  </div><div class="about__slot">
+    <div class="Staffpic"  onclick="zapin(this.parentNode);" style="background-image:url('randomman.png');"></div>
+  
+  <div class="about__info">
+  <h4 class="name">James St.Patrick</h4>
+  <h5 class="title">Interior designer</h5>
+  </div>
+      
+  
+  </div><div class="about__slot"><div class="Staffpic" onclick="zapin(this.parentNode);" style="background-image:url('woman1.jpg');"></div>
+  <div class="about__info">
+  <h4 class="name">Stacey</h4>
+  <h5 class="title">Human Resorces</h5>
+  </div>
+  
+  </div><div class="about__slot">
+    <div class="Staffpic"  onclick="zapin(this.parentNode);" style="background-image:url('woman1.png');"></div>
+  
+  <div class="about__info">
+  <h4 class="name">Tasha</h4>
+  <h5 class="title">PA</h5>
+  </div>
+  </div></a>
+  </div>
+</div>
+
+<div id="section2">
+<a href="#ll">&uarr;</a>
+</div>
+
+<div>
+<footer>
+<p><a href="about.html">About</a> - term - careers- <a href="contact.html">contact</a> <br>
+home design @ 2020</p>
+</footer>
+<div>
+
+</body>
+
+<script>
+
+function zapin(e) {
+	if(e.className == 'about__slot') {
+		e.className = 'about__slot';
+	}
+	else {
+		e.className = 'about__slot';
+	}
+}
+
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+
+    if (this.hash !== "") {
+  
+      event.preventDefault();
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    } });});
+
+
+</script>
+</html>

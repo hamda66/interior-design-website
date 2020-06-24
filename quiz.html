@@ -1,0 +1,210 @@
+<html>
+<head>
+
+<style>
+.container {
+  padding-bottom: 60px;
+font-family: fanstasy;
+}
+
+.quiz-question {
+  font-weight: bold;
+  font-size: 28px;
+  padding: 20px 0 5px;
+font-family: fanstasy;
+}
+
+.quiz-answer label {
+  font-size: 18px;
+  font-weight: normal;
+  display: block;
+  padding-left: 15px;
+font-family: fanstasy;
+}
+
+#result {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+font-family: fanstasy;
+}
+body{
+font-family: fanstasy;
+font-size: 24px;
+}
+
+.navi {
+  overflow: hidden;
+  background-color: white;
+}
+
+.navi a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navi a:hover {
+  background-color: #ddd;
+  color: white;
+}
+
+.navi a.active {
+  background-color: white;
+  color: black;
+}
+
+#parent {
+    margin: 0;
+    width: 100%;
+	display: block;
+	clear: both;
+}
+
+</style>
+</head>
+
+
+
+
+<body onLoad="populate()"> 
+
+<div id="parent">
+<div class="navi">
+  <a  href="mainpage.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+  <a href="quiz.html">Quiz</a>
+</div>
+</div>
+
+<form> 
+<div class="wrapper container">  
+
+  
+  <div class="page-header">
+    <h1>What is your home design style?<br>
+	<small>Don't which style to pick? this is the quiz just for you ;)</small></h1>
+    
+  </div>
+
+
+  <div class="quiz-box quiz-1">  
+    <h2 class="quiz-question">1. What is your ideal sofa colour?</h2>
+    <span class="quiz-answer"> 
+      <label><input type="radio" name="q1" onClick="save(1,0)"> Light blue</label>
+      <label><input type="radio" name="q1" onClick="save(1,1)"> white</label>
+      <label><input type="radio" name="q1" onClick="save(1,2)"> brown</label>
+    </span>  
+  </div>  
+
+  
+  <div class="quiz-box quiz-2">  
+    <h2 class="quiz-question">2. Your favourite pillow colour?</h2> 
+    <span class="quiz-answer"> 
+      <label><input type="radio" name="q2" onClick="save(2,0)">Red</label>
+      <label><input type="radio" name="q2" onClick="save(2,1)"> Beige</label>
+      <label><input type="radio" name="q2" onClick="save(2,2)"> Chestnut or Dark chocolate</label>
+
+    </span>  
+  </div>  
+
+  
+  <div class="quiz-box quiz-3">   
+    <h2 class="quiz-question">3. Table sizes?</h2> 
+    <span class="quiz-answer"> 
+      <label><input type="radio" name="q3" onClick="save(3,0)"> Big</label> 
+      <label><input type="radio" name="q3" onClick="save(3,1)"> Small</label> 
+      <label><input type="radio" name="q3" onClick="save(3,2)"> Don't care</label> 
+    </span>  
+  </div> 
+
+
+  <div class="quiz-box quiz-4">    
+    <h2 class="quiz-question">4. Kitchen cabin colors?</h2> 
+    <span class="quiz-answer"> 
+      <label><input type="radio" name="q4" onClick="save(4,0)"> white/Silver</label> 
+      <label><input type="radio" name="q4" onClick="save(4,1)"> Brown/black</label> 
+      <label><input type="radio" name="q4" onClick="save(4,2)"> White/blue</label> 
+    </span>  
+  </div> 
+  
+  
+  <hr>  
+
+  
+  <div class="get-result">   
+    <input class="btn btn-primary" type="button" name="result" value="Submit" onClick="total()"> 
+    <input class="btn btn-default" type="reset" value="Reset"> 
+  </div> 
+
+  
+  <hr>   
+  
+  
+  <div class="result-box">   
+    <h3>Your home design Style is: </h3>
+    <div id="result"></div> 
+  </div>
+    
+  
+</div>    
+</form> 
+</body>
+
+
+<script>
+var Quest = new Array(4); 
+
+function populate() { 
+  for(var i=0; i<4; i++) { Quest[i]=0; } 
+} 
+
+function total() { 
+  myScore=0; 
+  for (var i=0; i<4; i++) { myScore=myScore+Quest[i]; } 
+  analyzer(myScore); 
+} 
+
+myContents = new Array(); 
+  myContents[0] = "Urban design"   + ""; 
+  myContents[1] = "Meditterainan design"  + ""; 
+  myContents[2] = "Modern design" + "";
+ 
+
+
+function analyzer (myScore) { 
+  if (myScore>5)  
+  { myContentsPtr = 0; } 
+    else { if (myScore > 3) 
+	{ myContentsPtr = 1; } 
+    
+    else                     
+{ myContentsPtr = 0; } 
+        } 
+       
+     
+  
+  myDisplay(myContents[myContentsPtr]) 
+} 
+
+
+function myDisplay(myContents) {  
+document.getElementById("result").innerHTML = (myContents);
+} 
+
+function save(q, points) { 
+  q=q-1; 
+  Quest[q]=points 
+} 
+
+
+
+
+</script>
+</html>
